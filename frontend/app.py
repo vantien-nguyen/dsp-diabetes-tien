@@ -25,7 +25,7 @@ url_host = "http://127.0.0.1:8000"
 with st.sidebar:
     st.subheader('Instruction!!!!')
     
-    st.text("Read the README file to install and run project")
+    st.text("Read the README file!!")
     st.write("[https://github.com/tiennguyenhust/dsp-diabetes-tien](https://github.com/tiennguyenhust/dsp-diabetes-tien)")
     image = Image.open('data/images/img.jpg')
     st.image(image, caption='*')
@@ -133,12 +133,11 @@ if st.button('Predict for one patient'):
 st.markdown('**_Multi Prediction!_**')
 X_test_file = st.file_uploader('Choose a CSV file for prediction')
 
-col_test, col_pred = st.beta_columns((2, 1))
+col_test, col_pred = st.beta_columns((3, 1))
 with col_test:
-    if X_test_file:
-        st.write('filename: ', X_test_file.name)
-        X_test = pd.read_csv(X_test_file, names=headers[0:-1])
-        st.write(X_test)
+    st.write('filename: ', X_test_file.name)
+    X_test = pd.read_csv(X_test_file, names=headers[0:-1])
+    st.write(X_test)
 with col_pred:
     if X_test_file:
         st.write('Result')
