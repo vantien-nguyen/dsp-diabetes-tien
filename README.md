@@ -7,6 +7,8 @@ By Van Tien NGUYEN
 2.  My Application is developed on serving folder:
   - frontend: streamlit application
   - backend: FastAPI
+  - diabetes datasets are saved in directory: backend/data
+  - models are save in: backend/models
 3. Runing:
   - clone project: git clone git@github.com:tiennguyenhust/dsp-diabetes-tien.git
   - move to the root directory: cd dsp-diabetes-tien
