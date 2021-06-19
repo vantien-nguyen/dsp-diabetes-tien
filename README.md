@@ -19,3 +19,10 @@ By Van Tien NGUYEN
   - create the environment using requirements-dev.txt file
   - Run Backend: python backend/main.py
   - Run Frontend: streamlit run frontend/app.py
+
+4. Deployment on Heroku:
+  - Frontend: https://dspdiabetes.herokuapp.com/
+  - Backend: https://dspdiabetesapi.herokuapp.com/docs
+  * Because The Heroku filesystem is ephemeral, so all saved models are not kept. That means the API get models doesn't work, and api training model cannot save the model
+
+==> Solution: AWS S3 or Database (postgresql ie.) but it's not problem in this project!
