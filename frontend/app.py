@@ -27,7 +27,7 @@ with st.sidebar:
     
     st.text("Read the README file!!")
     st.write("[https://github.com/tiennguyenhust/dsp-diabetes-tien](https://github.com/tiennguyenhust/dsp-diabetes-tien)")
-    image = Image.open('data/images/img.jpg')
+    image = Image.open('frontend/images/img.jpg')
     st.image(image, caption='*')
     
     st.subheader('Saved models:')
@@ -91,7 +91,11 @@ selected_model_name = st.selectbox("Available models: (All saved models are load
 
 model_file = st.file_uploader('Upload your own model:')
 if model_file:
-    selected_model_name = model_file.name
+    if model_file.name[-7:] == '.joblib' or model_file.name[-4:] == '.sav' or model_file.name[-4:] == '.pkl':
+        selected_model_name = model_file.name
+    else:
+        st.warning('Wrong file!!!')
+        st.stop()
 
 selected_model = st.markdown('Selected Model: **_{}_**'.format(str(selected_model_name)))
 
@@ -135,9 +139,10 @@ X_test_file = st.file_uploader('Choose a CSV file for prediction')
 
 col_test, col_pred = st.beta_columns((3, 1))
 with col_test:
-    st.write('filename: ', X_test_file.name)
-    X_test = pd.read_csv(X_test_file, names=headers[0:-1])
-    st.write(X_test)
+    if X_test_file:
+        st.write('filename: ', X_test_file.name)
+        X_test = pd.read_csv(X_test_file, names=headers[0:-1])
+        st.write(X_test)
 with col_pred:
     if X_test_file:
         st.write('Result')
