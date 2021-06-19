@@ -8,8 +8,8 @@ By Van Tien NGUYEN
   - frontend: streamlit application
   - backend: FastAPI
 3. Runing:
-  - clone project: git clone https://github.com/tiennguyenhust/ais-dsp-tien
+  - clone project: git clone git@github.com:tiennguyenhust/dsp-diabetes-tien.git
   - move to the root directory: cd dsp-diabetes-tien
   - create the environment using requirements-dev.txt file
-  - Run Backend: python serving/backend/main.py
-  - Run Frontend: streamlit run serving/frontend/app.py
+  - Run Backend: python backend/main.py
+  - Run Frontend: streamlit run frontend/app.py
