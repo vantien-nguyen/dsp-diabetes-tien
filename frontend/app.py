@@ -61,6 +61,9 @@ if option_model == 'ElasticNet':
         l1_ratio = st.number_input('l1_ratio', min_value=0.000, max_value=1.000)  
 
 # training
+rmse = None 
+mae = None 
+r2 = None
 if st.button('Training'):
     if train_file:
         kwargs = {}
@@ -71,10 +74,18 @@ if st.button('Training'):
         data_train=[json.loads(i) for i in data_train if i != '']
         data = {'kwargs': kwargs, 'data_train': data_train}
         res = requests.post(url_host + '/training?model_name={}'.format(option_model), json=data).json()
+        rmse, mae, r2 = res['rmse'], res['mae'], res['r2']
         
-        st.success(f'Training Successful! Your model {option_model} is saved! \n' + str(res))
+        st.success(f'Training Successful! Your model {option_model} is saved!')
     else:
         st.warning('You need to upload a CSV file')
+
+if rmse and mae and r2:
+    st.markdown("**Result: **")
+    st.text(f"Trained Model: {option_model}")
+    st.text(f"rmse: {rmse}")
+    st.text(f"mae: {mae}")
+    st.text(f"r2: {r2}")
 
 
 #==================== Prediction ==============

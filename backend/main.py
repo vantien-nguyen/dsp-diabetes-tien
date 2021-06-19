@@ -47,7 +47,6 @@ async def get_models():
     files_name = glob.glob("backend/models/*.joblib")
     return [f.split('\\')[1] for f in files_name]
 
-
 @app.post('/training')
 async def training(model_name: str, kwargs: dict, data_train: List[DiabetesInfoFull]):
     headers = ['age','sex','bmi','bp','s1','s2','s3','s4','s5','s6']
