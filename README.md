@@ -7,10 +7,10 @@ By Van Tien NGUYEN
 2.  My Application is developed on serving folder:
   - frontend: streamlit application
   - backend: FastAPI - APIs:
-		+ GET  /models: get all available models
-		+ POST /training: trainng the model with data: return rmse, mae, r2
-		+ POST /predict: predict one patient
-		+ POST /predict_obj predict list of patients
+	+ GET  /models: get all available models
+	+ POST /training: trainng the model with data: return rmse, mae, r2
+	+ POST /predict: predict one patient
+	+ POST /predict_obj predict list of patients
   - diabetes datasets are saved in directory: backend/data
   - models are save in: backend/models
 3. Runing:
