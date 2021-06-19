@@ -3,8 +3,8 @@
 
 By Van Tien NGUYEN
 
-1.  Serving using the diabetes dataset following the instruction: https://github.com/EPITA-courses/dsp_practical_work/blob/master/instructions/pw4.md
-2.  My Application is developed on serving folder:
+1.  This project uses the diabetes dataset following the instruction: https://github.com/EPITA-courses/dsp_practical_work/blob/master/instructions/pw4.md
+2.  My Application includes 2 main folders:
   - frontend: streamlit application
   - backend: FastAPI - APIs:
 	+ GET  /models: get all available models
