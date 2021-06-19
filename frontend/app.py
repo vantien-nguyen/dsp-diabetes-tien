@@ -27,6 +27,11 @@ with st.sidebar:
     
     st.text("Read the README file!!")
     st.write("[https://github.com/tiennguyenhust/dsp-diabetes-tien](https://github.com/tiennguyenhust/dsp-diabetes-tien)")
+    
+    st.subheader('The diabetes dataset:')
+    st.write("[https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html)")
+    
+    
     image = Image.open('frontend/images/img.jpg')
     st.image(image, caption='*')
     
