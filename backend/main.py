@@ -53,14 +53,12 @@ async def training(model_name: str, kwargs: dict, data_train: List[DiabetesInfoF
     headers = ['age','sex','bmi','bp','s1','s2','s3','s4','s5','s6']
     data_train = pd.DataFrame([d.dict() for d in data_train])
     
-    print("==========", model_name, data_train)
     X = data_train[headers]
     y = data_train['quantitative']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
     models = {'LinearRegression': LinearRegression, 'ElasticNet': ElasticNet, 'RandomForestRegressor': RandomForestRegressor}
     
-    print("==========", model_name, X_train)
     model_class = models[model_name]
     trained_model = model_class(**kwargs)
     trained_model.fit(X_train, y_train)
